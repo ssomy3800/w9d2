@@ -7,9 +7,12 @@ class Board {
 
   isEmptyPos(pos) {
     if (!Board.isValidPos(pos)) {
+      // console.log("why")
       throw new MoveError('Is not valid position!');
+      
     }
 
+    // console.log((this.grid[pos[0]][pos[1]] === null));
     return (this.grid[pos[0]][pos[1]] === null);
   }
 
@@ -30,6 +33,8 @@ class Board {
   }
 
   placeMark(pos, mark) {
+    // console.log(`${pos[0]} ${pos[1]}`);
+    // console.log(mark);
     if (!this.isEmptyPos(pos)) {
       throw new MoveError('Is not an empty position!');
     }
@@ -99,6 +104,8 @@ class Board {
   }
 
   static isValidPos(pos) {
+    // console.log(typeof pos[0])
+    // console.log(`${pos[0]} ${pos[1]}`);
     return (0 <= pos[0]) &&
     (pos[0] < 3) &&
     (0 <= pos[1]) &&

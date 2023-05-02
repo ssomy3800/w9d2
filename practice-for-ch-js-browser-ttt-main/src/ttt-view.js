@@ -11,7 +11,8 @@ class View {
       let x = Math.floor(i / 3);
       let y = i % 3;
       let listItem = document.createElement("li");
-      listItem.dataset.pos = `[${x},${y}]`;
+      // listItem.dataset.pos = `[${x},${y}]`;
+      listItem.dataset.pos = [x,y];
       arr.push(listItem);
       ul.append(listItem);
     }
@@ -22,13 +23,25 @@ class View {
 
   handleClick(e) {
     let cell = e.target;
-    let pos = cell.dataset.pos;
+    this.makeMove(cell);
+    // let pos = cell.dataset.pos;
+    // let posArr = 
 
+    // console.log(typeof pos);
     // this.game.playMove(pos);
-    // console.log(this.game.__proto__);
   }
 
-  makeMove(square) {}
+  makeMove(square) {
+    let pos = square.dataset.pos;
+    let posArr = pos.split(",").map(char => parseInt(char.trim()));
+    // console.log(posArr instanceof Array);
+    this.game.playMove(posArr);
+    square.classList.add(this.game.currentPlayer);
+    
+    // console.log(typeof pos);
+    // let posArr = pos
+
+  }
 
   handleGameOver() {}
 }

@@ -10,9 +10,6 @@ ul {
   list-style: none;
 }
 
-/* li::after {
-  content: "x";
-} */
 
 li {
   display: flex;
@@ -23,4 +20,14 @@ li {
 }
 li:hover {
   background-color: yellow;
+}
+
+li.o::after {
+  content: "o";
+  font-size:larger;
+}
+
+li.x::after {
+  content: "x";
+  font-size:larger;
 }
