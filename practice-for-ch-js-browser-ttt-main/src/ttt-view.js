@@ -1,5 +1,6 @@
 class View {
   constructor(game, el) {
+    
   }
   
   setupBoard() {
