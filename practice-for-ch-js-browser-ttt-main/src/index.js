@@ -7,5 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const game = new Game();
   const gameContainer = document.querySelector(".ttt");
   const view = new View(game, gameContainer);
-  
+
+  gameContainer.children[0].addEventListener("click", view.handleClick);
 });

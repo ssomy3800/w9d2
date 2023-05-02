@@ -3,7 +3,6 @@ class View {
     this.game = game;
     this.el = el;
     this.setupBoard(); //without "this" receiver, it wont work, why!?!!?!?
-    this.handleClick();
   }
   setupBoard() {
     let ul = document.createElement("ul");
@@ -21,7 +20,13 @@ class View {
     console.log("hi Carvey");
   }
 
-  handleClick(e) {}
+  handleClick(e) {
+    let cell = e.target;
+    let pos = cell.dataset.pos;
+
+    // this.game.playMove(pos);
+    // console.log(this.game.__proto__);
+  }
 
   makeMove(square) {}
 
